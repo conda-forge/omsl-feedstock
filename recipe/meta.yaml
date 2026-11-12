@@ -1,21 +1,25 @@
-{% set version = "4.0.0" %}
+{% set version = "4.1.0" %}
 
 package:
   name: omsl
   version: {{ version }}
 
 source:
-  url: https://github.com/OpenModelica/OpenModelica-ModelicaStandardLibrary/archive/c11123102e94d4b5acb139331a6d85f45d8adcc0.zip
-  sha256: 0792c4841a0ab8e2ffb750a0a1fffa45d6a5b6b224c045db67c241fef570c229
+  url: https://github.com/OpenModelica/OpenModelica-ModelicaStandardLibrary/archive/8df0769a9cee6ad04ddfff95faee64cd70f662ec.zip
+  sha256: ba66dd3acc0753caf51d4e0d38be4392080462257e6baebd5139b60668a45d04
 
 build:
   noarch: generic
-  number: 1
+  number: 0
 
 test:
   requires:
     - python >=3.11
     - openmodelica
+  files:
+    - run_test.py
+  commands:
+    - python run_test.py
 
 about:
   home: https://github.com/OpenModelica/OpenModelica-ModelicaStandardLibrary
@@ -28,7 +32,7 @@ about:
     with documentation included.
     OpenModelica <https://openmodelica.org> is a Modelica simulation
     environment. It is required for the usage of this library and is provided
-    by the conda package omcompiler.
+    by the conda package openmodelica (formerly omcompiler).
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE.txt
